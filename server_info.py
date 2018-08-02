@@ -7,7 +7,7 @@ CMD = """
     coreNumber=$(grep "cpu cores" /proc/cpuinfo|uniq|awk -F':' '{print $2}'|xargs)
     HTNumber=$((logicalNumber / (physicalNumber * coreNumber)))
     cpu_info=$(cat /proc/cpuinfo | grep name | cut -f2 -d: | uniq -c)
-    eth_n=$(ip a|grep "eth0||em1||eht1|enslo"|head -n 1|awk '{print $7}')
+    eth_n=$(ip a|grep "eth0||em1||eht1||enslo"|head -n 1|awk '{print $7}')
     echo "******* Information *********"
     echo "`dmidecode | grep "Product Name" `"|awk '{printf "%-s\\n",$0}'|cut -c 2-60
     echo "${cpu_info}"|cut -c 6-60
