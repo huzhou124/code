@@ -27,9 +27,5 @@ CMD = """
 #假如你的硬盘大于4T就会提示使用gun，而不是使用gtp的东西。
 #第10行这里是取ip192.168开头的
 #注意第22是会去判断是否有lspci这个命令，没有就去下载pciutils-3.1.10-4.el6.x86_64
-        #os.system(CMD)
-for i in os.popen(CMD).readlines():
-    if i.startswith("WA"):
-        pass
-    else:
-        print i.strip()
+
+os.system(CMD)
