@@ -1,37 +1,28 @@
-## Welcome to GitHub Pages
+当前目录：
+   server_info.py
+       该脚本是用来看服务器的信息的，包括产品型号，cpu详细信息，内核信息，磁盘信息，以及正在使用的网卡信息。
 
-You can use the [editor on GitHub](https://github.com/huzhou124/huzhou/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+表现如下（这个警告的意思是该磁盘大于4T应该使用GNU管理而不是使用GPT管理）：
+WARNING: GPT (GUID Partition Table) detected on '/dev/sdb'! The util fdisk doesn't support GPT. Use GNU Parted.
 
-### Markdown
+sh: line 21: lspci: command not found
+******* Information *********
+Product Name: RH2288 V3
+Product Name: BC11HGSB0
+40  Intel(R) Xeon(R) CPU E5-2640 v4 @ 2.40GHz
+Logical CPU Number  : 40
+Physical CPU Number : 2
+CPU Core Number     : 10
+HT Number           : 2
+Kernel version:
+4.11.6-1.el6.elrepo.x86_64
+Disk:
+130:Disk /dev/sda: 239.0 GB, 238999830528 bytes
+142:Disk /dev/sdb: 16000.0 GB, 15999998885888 bytes
+Totalmem            : 263745628 kB
+Ethernet info:
+Eth  :   eth0
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/huzhou124/huzhou/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+Speed: 1000Mb/s Duplex: Full
+*****************************
