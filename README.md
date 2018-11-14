@@ -1,7 +1,8 @@
-###目录结构说明
+### 目录结构说明
 >当前目录：
    server_info.py
-       该脚本是用来看服务器的信息的，包括产品型号，cpu详细信息，内核信息，磁盘信息，以及正在使用的网卡信息。
+       该脚本是用来看服务器的信息的，包括产品型号，cpu详细信息，内核信息，磁盘信息，以及正在使用的网卡信息,当磁盘大于8G，会提示
+```WARNING: GPT (GUID Partition Table) detected on '/dev/sdb'! The util fdisk doesn't support GPT. Use GNU Parted.```
 ```
 ******* Information *********
 Product Name: RH2288 V3
