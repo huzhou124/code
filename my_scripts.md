@@ -55,4 +55,11 @@ def tool_update(self):
     CMD = "wget http://192.168.18.177/tool/pta_tool_install.sh;bash pta_tool_install.sh"
     os.system(CMD)
 ```
-
+## 4.在linux，当命令一样可以全局执行python脚本
+** 在/usr/bin下创建与其同名的脚本**
+```
+#!/usr/bin/env bash
+# -*- coding: UTF-8 -*-
+#build date:Wed Apr 25 20:41:44 2018
+exec python    /usr/bin/py_lib/pta_tool.py $*
+```
