@@ -56,7 +56,7 @@ def tool_update(self):
     os.system(CMD)
 ```
 ## 4.在linux，当命令一样可以全局执行python脚本
-** 在/usr/bin下创建与其同名的脚本**
+**在/usr/bin下创建与其同名的脚本**
 ```
 #!/usr/bin/env bash
 # -*- coding: UTF-8 -*-
