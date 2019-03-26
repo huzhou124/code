@@ -5,7 +5,8 @@
 ## my_scripts.md
       这里面介绍了4个实用型的脚本，可以配合使用。
 ## server_info.py
-       server_info.py 该脚本是用来看服务器的信息的，包括产品型号，cpu详细信息，内核信息，磁盘信息，以及正在使用的网卡信息,当磁盘大于8T，会有如下警告提示:<br />
+       server_info.py 该脚本是用来看服务器的信息的，包括产品型号，cpu详细信息，内核信息，磁盘信息，  
+       以及正在使用的网卡信息,当磁盘大于8T，会有如下警告提示:  
 ```WARNING: GPT (GUID Partition Table) detected on '/dev/sdb'! The util fdisk doesn't support GPT. Use GNU Parted.```
 出现的原因是因为大于8T GPT磁盘管理方式就不支持了，应该要使用GUN
 ```
