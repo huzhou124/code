@@ -4,10 +4,10 @@
 ```
 #!/usr/bin/env bash
 Time=`date +"%Y-%m-%d"`
-sed -i "/^update:/c update:${Time}" pta_tool/py_lib/tool_config.py
-zip -r pta_tool.zip pta_tool
+sed -i "/^update:/c update:${Time}" product_tool/py_lib/tool_config.py
+zip -r product_tool.zip product_tool
 echo "----------------\n${Time}" > Version.log
-md5sum pta_tool/py_lib/pta_tool.py >> Version.log
+md5sum product_tool/py_lib/product_tool.py >> Version.log
 ```
 
 ## 2.安装脚本
@@ -15,16 +15,16 @@ md5sum pta_tool/py_lib/pta_tool.py >> Version.log
 ```
 #！/usr/bin/env bash
 alias cp='cp -i'
-echo "解压pta_tool.zip"
-wget http://192.168.18.177/tool/pta_tool.zip
-unzip pta_tool.zip
+echo "解压product_tool.zip"
+wget http://192.168.18.177/tool/product_tool.zip
+unzip product_tool.zip
 if [ "$?" != "0" ];then
     echo "不存在unzip，yum install -y unzip"
     yum install -y unzip
-    unzip pta_tool.zip
+    unzip product_tool.zip
 fi
-cd pta_tool/
-chmod 755 pta_tool.py
+cd product_tool/
+chmod 755 product_tool.py
 if [ -e /usr/bin/py_lib ];then
     mode="Update"
     echo "We will update"
@@ -33,7 +33,7 @@ if [ -e /usr/bin/py_lib ];then
 else
     mode='Install'
     echo "We will install"
-    cp pta_tool.py /usr/bin/
+    cp product_tool.py /usr/bin/
     mkdir /usr/bin/py_lib
     cp py_lib/* /usr/bin/py_lib/
 fi
@@ -43,8 +43,8 @@ else
     echo -e "\033[31m ${mode} failing !!!\033[0m"
 fi
 cd ..
-rm -rf pta_tool
-rm -rf pta_tool.zip
+rm -rf product_tool
+rm -rf product_tool.zip
 rm -rf $0
 ```
 
@@ -52,7 +52,7 @@ rm -rf $0
 **工具脚本中相应的升级模块，将其做成一个选项，去一个服务器下载安装脚本，然后并且执行**
 ```
 def tool_update(self):
-    CMD = "wget http://192.168.18.177/tool/pta_tool_install.sh;bash pta_tool_install.sh"
+    CMD = "wget http://192.168.18.177/tool/product_tool_install.sh;bash product_tool_install.sh"
     os.system(CMD)
 ```
 ## 4.在linux，当命令一样可以全局执行python脚本
@@ -61,5 +61,5 @@ def tool_update(self):
 #!/usr/bin/env bash
 # -*- coding: UTF-8 -*-
 #build date:Wed Apr 25 20:41:44 2018
-exec python    /usr/bin/py_lib/pta_tool.py $*
+exec python    /usr/bin/py_lib/product_tool.py $*
 ```
