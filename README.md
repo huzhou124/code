@@ -33,3 +33,6 @@ Intel Corporation I350 Gigabit Network Connection (rev 01)
 Speed: 1000Mb/s Duplex: Full
 *****************************
 ```
+
+## 一句话查看服务器硬件性能：
+`echo -e "------"; cat /proc/cpuinfo|grep "physical id"|uniq |tail -1;echo -e "------";cat /proc/cpuinfo |grep processor |tail -n 1;echo -e "------";cat /proc/cpuinfo |grep "model name"|uniq;echo -e "------";free -g|grep Mem;echo -e "------";df -h|grep /dev/|grep -v tmpfs;echo -e "------";ethtool bond0;`
